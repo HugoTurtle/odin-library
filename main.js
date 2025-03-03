@@ -10,3 +10,7 @@ function Book (title, author, pageNum, hasRead) {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.hasRead ? "read" : "not read yet"}`;
     };
 }
+
+function createBook(title, author, pageNum, hasRead) {
+    let book = new Book(title, author, pageNum, hasRead);
+}
