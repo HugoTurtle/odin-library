@@ -24,3 +24,15 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
+.book {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    height: 200px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
