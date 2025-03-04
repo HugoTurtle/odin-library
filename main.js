@@ -25,15 +25,19 @@ Book.prototype.displayBook = function () {
 
     const author = document.createElement('h3');
     author.classList.add('author');
+    author.textContent = this.author;
 
     const title = document.createElement('p')
     title.classList.add('title')
+    title.textContent = this.title;
 
     const pageNum = document.createElement('p');
     pageNum.classList.add('pages')
+    pageNum.textContent = this.pageNum;
 
     const hasRead = document.createElement('p')
     hasRead.classList.add('read-status');
+    hasRead.textContent = this.hasRead;
     
     book.append(author,title,pageNum,hasRead);
 
