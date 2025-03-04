@@ -23,6 +23,8 @@ header {
     
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
 }
 .book {
     border: 1px solid black;
