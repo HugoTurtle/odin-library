@@ -12,7 +12,7 @@ function Book (title, author, pageNum, hasRead) {
 }
 
 function createBook(title, author, pageNum, hasRead) {
-    let book = new Book(title, author, pageNum, hasRead);
+    addBookToLibrary(new Book(title, author, pageNum, hasRead));
 }
 
 function addBookToLibrary(book) {
