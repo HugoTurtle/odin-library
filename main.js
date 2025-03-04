@@ -37,7 +37,7 @@ Book.prototype.displayBook = function () {
 
     const hasRead = document.createElement('p')
     hasRead.classList.add('read-status');
-    hasRead.textContent = this.hasRead;
+    hasRead.textContent = this.hasRead ? "Read" : "Not Read";
     
     book.append(author,title,pageNum,hasRead);
 
