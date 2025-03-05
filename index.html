@@ -31,5 +31,41 @@
             <p class="read-status">Not Read</p>
         </article>
     </main>
+    <dialog id="dialog">
+        <form action="" method="dialog">
+            <p>
+                <label>
+                    Title:
+                    <input type="text" name="title" required>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Author:
+                    <input type="text" name="author" required>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Page Number:
+                    <input type="text" name="pageNumber" required>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Read Status
+                    <select name="readStatus" id="" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="read">Read</option>
+                        <option value="notRead">Not Read</option>
+                    </select>
+                </label>
+            </p>
+            <div>
+                <input type="submit" value="Submit">
+                <input type="button" value="Cancel" onclick="dialog.close()">
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
