@@ -45,3 +45,9 @@ Book.prototype.displayBook = function () {
 
     bookContainer.appendChild(book);
 }
+const showBtn = document.getElementById('show-dialog');
+const dialog = document.getElementById('dialog');
+
+showBtn.addEventListener("click", () => {
+    dialog.showModal();
+  });
