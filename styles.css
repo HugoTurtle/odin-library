@@ -15,6 +15,10 @@ body {
 header {
     font-family: Roboto, "Courier New", monospace;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 #book-container {
     border: 5px solid black;
@@ -65,8 +69,16 @@ select {
   width: 150px;
 }
 input[type='button'],
-input[type='submit'] {
+input[type='submit'],
+#show-dialog  {
     background-color: black;
     color: white;
     cursor: pointer;
+}
+#show-dialog {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
 }
