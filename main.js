@@ -60,6 +60,6 @@ const readStatus = form.elements['readStatus'];
 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); //Prevents default reload submission of page
-    createBook(title.value, author.value, pageNumber.value, readStatus.value);
+    createBook(title.value, author.value, pageNumber.value, readStatus.value === "true" ? true : false);
     myLibrary[myLibrary.length - 1].displayBook();
 })
