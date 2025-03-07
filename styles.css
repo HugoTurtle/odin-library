@@ -56,3 +56,17 @@ dialog::backdrop {
     align-items: flex-end;
     gap: 5px;
 }
+input,
+select {
+  width: 150px;
+  padding: 4px;
+  border: 1px black solid;
+  border-radius: 5px;
+  width: 150px;
+}
+input[type='button'],
+input[type='submit'] {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
