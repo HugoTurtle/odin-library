@@ -51,3 +51,15 @@ const dialog = document.getElementById('dialog');
 showBtn.addEventListener("click", () => {
     dialog.showModal();
   });
+
+const form = document.getElementById('dialogForm');
+const title = form.elements['title'];
+const author = form.elements['author'];
+const pageNumber = form.elements['pageNumber'];
+const readStatus = form.elements['readStatus'];
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); //Prevents default reload submission of page
+    createBook(title.value, author.value, pageNumber.value, readStatus.value);
+    myLibrary[myLibrary.length - 1].displayBook();
+})
