@@ -33,7 +33,7 @@ Book.prototype.displayBook = function () {
 
     const pageNum = document.createElement('p');
     pageNum.classList.add('pages')
-    pageNum.textContent = this.pageNum;
+    pageNum.textContent = this.pageNum + " pages";
 
     const hasRead = document.createElement('p')
     hasRead.classList.add('read-status');
