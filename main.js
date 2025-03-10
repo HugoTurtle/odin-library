@@ -63,3 +63,13 @@ form.addEventListener('submit', (e) => {
     createBook(title.value, author.value, pageNumber.value, readStatus.value === "true" ? true : false);
     myLibrary[myLibrary.length - 1].displayBook();
 })
+createBook('Mistborn: The Final Empire', 'Brandon Sanderson', 647, true);
+createBook('A Good Girl\'s Guide To Murder', 'Holly Jackson',  400, true);
+createBook('Red Rising', 'Pierce Brown', 416, false);
+
+function displayLibrary(library) {
+    library.forEach(element => {
+        element.displayBook();
+    });
+}
+displayLibrary(myLibrary);
