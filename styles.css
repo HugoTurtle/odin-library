@@ -36,6 +36,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 5px;
 
     height: 200px;
     padding: 1.5rem;
@@ -70,15 +71,25 @@ select {
 }
 input[type='button'],
 input[type='submit'],
-#show-dialog  {
+#show-dialog,
+.delete-button,
+.read-status-button {
     background-color: black;
     color: white;
     cursor: pointer;
 }
-#show-dialog {
+#show-dialog,
+.delete-button,
+.read-status-button {
     border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
     font-weight: 600;
+}
+.delete-button,
+.read-status-button {
+    width: fit-content;
+    padding: 5px;
+    font-size: 0.5rem;
 }
