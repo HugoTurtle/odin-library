@@ -15,6 +15,15 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+Book.prototype.toggleReadStatus = function() {
+    if (this.hasRead === true) {
+        this.hasRead = false;
+    }
+    else if(this.hasRead === false) {
+        this.hasRead = true;
+    }
+}
+
 Book.prototype.displayBook = function () {
     const book = document.createElement('div');
     book.classList.add('book');
@@ -45,9 +54,18 @@ Book.prototype.displayBook = function () {
         const bookIndex = bookDiv.getAttribute('data-index');
         myLibrary.splice(bookIndex, 1);
         updateLibraryDisplay();
-    })
+    });
 
-    book.append(author,title,pageNum,hasRead,deleteButton);
+    const changeReadStatusButton = document.createElement('button');
+    changeReadStatusButton.classList.add('read-status-button');
+    changeReadStatusButton.textContent = 'Change Read Status';
+
+    changeReadStatusButton.addEventListener('click', (e) => {
+        this.toggleReadStatus();
+        hasRead.textContent = this.hasRead ? "Read" : "Not Read";
+    });
+
+    book.append(author,title,pageNum,hasRead,deleteButton,changeReadStatusButton);
 
     document.getElementById('book-container').appendChild(book);
 }
