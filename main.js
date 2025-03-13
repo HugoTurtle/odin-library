@@ -38,8 +38,12 @@ Book.prototype.displayBook = function () {
     const hasRead = document.createElement('p')
     hasRead.classList.add('read-status');
     hasRead.textContent = this.hasRead ? "Read" : "Not Read";
-    
-    book.append(author,title,pageNum,hasRead);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-button');
+    deleteButton.textContent = "Delete Book";
+
+    book.append(author,title,pageNum,hasRead,deleteButton);
 
     const bookContainer = document.getElementById('book-container');
 
