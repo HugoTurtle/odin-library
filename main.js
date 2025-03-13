@@ -22,6 +22,7 @@ function addBookToLibrary(book) {
 Book.prototype.displayBook = function () {
     const book = document.createElement('div');
     book.classList.add('book');
+    book.setAttribute("data-index", myLibrary.indexOf(this));
 
     const author = document.createElement('h3');
     author.classList.add('author');
@@ -43,12 +44,26 @@ Book.prototype.displayBook = function () {
     deleteButton.classList.add('delete-button');
     deleteButton.textContent = "Delete Book";
 
+    deleteButton.addEventListener('click', function(e) {
+        const bookDiv = e.target.parentElement;
+        const bookIndex = bookDiv.getAttribute('data-index');
+        myLibrary.splice(bookIndex, 1);
+        updateLibraryDisplay();
+    })
+
     book.append(author,title,pageNum,hasRead,deleteButton);
 
     const bookContainer = document.getElementById('book-container');
 
     bookContainer.appendChild(book);
 }
+
+function updateLibraryDisplay() {
+    const bookContainer = document.getElementById('book-container');
+    bookContainer.innerHTML = "";
+    myLibrary.forEach(book => book.displayBook());
+}
+
 const showBtn = document.getElementById('show-dialog');
 const dialog = document.getElementById('dialog');
 
@@ -65,11 +80,15 @@ const readStatus = form.elements['readStatus'];
 form.addEventListener('submit', (e) => {
     e.preventDefault(); //Prevents default reload submission of page
     createBook(title.value, author.value, pageNumber.value, readStatus.value === "true" ? true : false);
-    myLibrary[myLibrary.length - 1].displayBook();
+    updateLibraryDisplay();
 })
 createBook('Mistborn: The Final Empire', 'Brandon Sanderson', 647, true);
 createBook('A Good Girl\'s Guide To Murder', 'Holly Jackson',  400, true);
 createBook('Red Rising', 'Pierce Brown', 416, false);
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateLibraryDisplay(); // Ensures initial books have delete functionality
+});
 
 function displayLibrary(library) {
     library.forEach(element => {
