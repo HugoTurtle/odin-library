@@ -53,9 +53,7 @@ Book.prototype.displayBook = function () {
 
     book.append(author,title,pageNum,hasRead,deleteButton);
 
-    const bookContainer = document.getElementById('book-container');
-
-    bookContainer.appendChild(book);
+    document.getElementById('book-container').appendChild(book);
 }
 
 function updateLibraryDisplay() {
